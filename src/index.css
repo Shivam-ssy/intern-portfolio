@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+.clippathl{
+  clip-path: polygon(0 0, 100% 0, 66% 100%, 0% 100%);
+}
+.clippathr{
+  clip-path:polygon(34% 0, 100% 0, 100% 100%, 0% 100%);
+}
