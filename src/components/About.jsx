@@ -97,7 +97,7 @@ function About() {
             <h1 className="md:text-4xl text-2xl mx-auto text-black border-3 py-1 px-12 w-fit text-center font-bold">
               SKILLS
             </h1>
-            <div className="max-w-7xl mx-auto w-full">
+            <div className="max-w-7xl mx-auto w-full px-10">
               {skills.map((category, index) => (
                 <div key={index} className={`mb-6  ${category.category !="using now"?"hidden md:block":"md:block"}`}>
                   <h2 className={`text-xl md:text-start font-semibold my-10 `}>

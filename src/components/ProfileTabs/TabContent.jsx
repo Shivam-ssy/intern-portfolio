@@ -10,7 +10,7 @@ function TabContent() {
         "/Project2.png",
       ];
   return (
-    <div className='grid grid-cols-1 md:grid-cols-3'>
+    <div className='grid grid-cols-1 place-items-center md:grid-cols-3'>
       {
         projectImages.map((image,i)=>(
             <img src={image} alt="" />

@@ -6,8 +6,8 @@ import "../App.css";
 function Hero() {
   return (
     <div id="home" className="flex items-center h-dvh justify-between bg-white">
-      <div className="flex w-full justify-center md:bg-[url('')] bg-[url('/Background.png')] h-full items-center clippathl md:w-1/3 flex-col space-y-4">
-        <div className="flex flex-col items-center md:items-start text-white  md:text-black md:px-0">
+      <div className="flex w-full bg-no-repeat bg-cover justify-center md:bg-[url('')] bg-[url('/Background.png')] h-full items-center clippathl md:w-1/3 flex-col space-y-4">
+        <div className="flex flex-col items-center md:items-start text-white  md:text-black md:px-5">
           <h2 className="md:text-3xl text-xl md-5 md:mb-10 font-semibold">Hi, I am</h2>
           <h1 className="md:text-6xl text-4xl font-bold">Tomasz Gajda</h1>
           <p className="md:text-lg text-white  md:text-gray-600">
