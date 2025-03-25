@@ -7,6 +7,8 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Footer from "./components/Footer";
 import Portfolio from "./components/Portfolio";
+import TabSwitcher from "./components/ProfileTabs/TabSwitch";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
       <Hero/>
       <About/>
       <Portfolio/>
+      <TabSwitcher/>
+      <Contact/>
       <Footer/>
     </>
   );
