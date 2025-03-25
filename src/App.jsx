@@ -12,7 +12,7 @@ import Contact from "./components/Contact";
 
 function App() {
   return (
-    <>
+    <main className="orelega-one-regular">
       <NavBar />
       <Hero/>
       <About/>
@@ -20,7 +20,7 @@ function App() {
       <TabSwitcher/>
       <Contact/>
       <Footer/>
-    </>
+    </main>
   );
 }
 
