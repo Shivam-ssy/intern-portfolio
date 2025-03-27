@@ -1,13 +1,23 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { GiPencilRuler } from "react-icons/gi";
 import { skills } from "../utils/skills.js";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 function About() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false,
+      mirror: true
+    });
+  }, []);
   return (
     <div>
       <div className="bg-black h-fit">
         <div
           id="about"
           className="md:px-16 flex text-white py-10 flex-col items-center md:items-start px-5"
+          data-aos="fade-up"
         >
           <h3 className="text-2xl font-bold">IT BERRIES</h3>
           <p className="mt-2 text-justify max-w-3xl">
@@ -15,7 +25,7 @@ function About() {
             Etiam non nisi non arcu suscipit suscipit. Vestibulum id magna
             ligula. Curabitur tristique lacinia est, vel aliquet lectus.
           </p>
-          <button className="mt-4 px-6 py-2 border border-white border-t-0 border-b-0 text-white">
+          <button className="mt-4 px-6 py-2 border border-white border-t-0 border-b-0 text-white"  data-aos="zoom-in">
             <p className="hidden md:block">Read More</p>
             <p className="md:hidden block">More</p>
           </button>
@@ -24,7 +34,7 @@ function About() {
         <div className="min-h-screen bg-gray-100  text-center py-16">
           {/* About Me Section */}
           <div className="space-y-8 flex-col flex items-center mb-20">
-            <h1 className="md:text-4xl text-2xl text-black border-3 py-1 px-12 w-fit text-center font-bold">
+            <h1 className="md:text-4xl text-2xl text-black border-3 py-1 px-12 w-fit text-center font-bold"  data-aos="zoom-in">
               ABOUT ME
             </h1>
             <p className=" max-w-xl mx-auto">
@@ -32,16 +42,16 @@ function About() {
               varius faucibus. Sed tortor erat, amet lorem sed vehicula, ut urna
               vel fringilla fermentum nec facilisis orci est.
             </p>
-            <button className="border-2 border-black px-6 border-t-0 border-b-0 py-2 mt-4 hover:bg-black hover:text-white transition duration-300">
+            <button className="border-2 border-black px-6 border-t-0 border-b-0 py-2 mt-4 hover:bg-black hover:text-white transition duration-300" data-aos="zoom-in">
               EXPLORE
             </button>
           </div>
 
           <div className="flex justify-center my-10">
-            <img className="" src="/separatorBlack2.png" alt="" />
+            <img className="" src="/separatorBlack2.png" alt="" data-aos="fade-up"/>
           </div>
 
-          <div className="space-y-4 px-8 md:px-0 gap-5 md:gap-14 mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 mb-20">
+          {/* <div className="space-y-4 px-8 md:px-0 gap-5 md:gap-14 mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 mb-20">
             <div>
               <div className="flex items-center">
                 <img
@@ -91,15 +101,57 @@ function About() {
                 job.
               </p>
             </div>
+          </div> */}
+          <div 
+            className="space-y-4 px-8 md:px-0 gap-5 md:gap-14 mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 mb-20"
+            data-aos="fade-up"
+          >
+            {[
+              { 
+                icon: "/design.png", 
+                title: "Design", 
+                description: "I can design the site based on your needs and suggestions. I can also design the site from scratch and consult you during the job."
+              },
+              { 
+                icon: "/maintenance.png", 
+                title: "Development", 
+                description: "I can design the site based on your needs and suggestions. I can also design the site from scratch and consult you during the job."
+              },
+              { 
+                icon: "/setting.png", 
+                title: "Maintenance", 
+                description: "I can design the site based on your needs and suggestions. I can also design the site from scratch and consult you during the job.",
+                fullWidth: true
+              }
+            ].map((item, index) => (
+              <div 
+                key={index} 
+                className={`${item.fullWidth ? 'md:col-span-2 place-self-center' : ''}`}
+                data-aos="fade-right"
+                data-aos-delay={index * 200}
+              >
+                <div className="flex items-center">
+                  <img
+                    className="md:h-14 md:w-14 w-10 h-10"
+                    src={item.icon}
+                    alt=""
+                  />
+                  <h2 className="font-bold -ml-2 text-xl md:text-2xl">{item.title}</h2>
+                </div>
+                <p className="text-justify ml-2 md:ml-10">
+                  {item.description}
+                </p>
+              </div>
+            ))}
           </div>
           {/* Skills Section */}
           <div id="skill">
-            <h1 className="md:text-4xl text-2xl mx-auto text-black border-3 py-1 px-12 w-fit text-center font-bold">
+            <h1 className="md:text-4xl text-2xl mx-auto text-black border-3 py-1 px-12 w-fit text-center font-bold" data-aos="zoom-in">
               SKILLS
             </h1>
             <div className="max-w-7xl mx-auto w-full px-10">
               {skills.map((category, index) => (
-                <div key={index} className={`mb-6  ${category.category !="using now"?"hidden md:block":"md:block"}`}>
+                <div key={index} className={`mb-6  ${category.category !="using now"?"hidden md:block":"md:block"}`} data-aos="fade-up">
                   <h2 className={`text-xl md:text-start font-semibold my-10 `}>
                     {category.category.toUpperCase()}
                   </h2>
@@ -110,6 +162,9 @@ function About() {
                         <div
                           key={i}
                           className={`flex items-center flex-col gap-2 px-4 py-2`}
+                          data-aos="zoom-in"
+                          data-aos-delay={i * 100}
+                          
                         >
                           {IconComponent && 
                             <IconComponent  color={skill.color} className="text-5xl" />
